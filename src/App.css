@@ -5,7 +5,6 @@
   justify-content: center;
   width: 400px;
   margin: auto;
-  background-color: white;
 }
 
 .receipt-header {
@@ -27,13 +26,24 @@ footer > p {
   font-size: 0.6rem;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 .barcode-input {
   margin: 2rem;
 }
 
+.barcode-input form button {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+}
+
 @media print {
+  .receipt {
+    background-color: white;
+  }
   .barcode-input {
     display: none;
   }
