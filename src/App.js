@@ -1,23 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import { useBarcode } from 'next-barcode';
+import { useState } from 'react';
 
 function App() {
+  const [barcode, setBarcode] = useState(null);
+
+  const { inputRef } = useBarcode({
+    value: barcode,
+    options: {}
+  });
+
+  const handleBarcodeInput = (e) => {
+    if (e.target.value === '') {
+      setBarcode(null);
+    } else {
+      setBarcode(e.target.value);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    window.print();
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="receipt">
+      <Header />
+      <main>
+        <svg ref={inputRef} />
+      </main>
+      <Footer />
+      <div className="barcode-input">
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="barcode">Barcode: </label>
+          <input type="text" value={barcode} onChange={handleBarcodeInput} />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   );
 }
