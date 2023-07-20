@@ -47,7 +47,7 @@ function App() {
       <div className="barcode-input">
         <form onSubmit={handleSubmit}>
           <label htmlFor="barcode">Barcode: </label>
-          <input type="text" value={barcode} onChange={handleBarcodeInput} />
+          <input type="text" value={barcode} onChange={handleBarcodeInput} autoFocus />
           <button type="submit">Submit</button>
         </form>
       </div>
