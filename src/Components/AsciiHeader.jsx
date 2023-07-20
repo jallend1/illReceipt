@@ -2,43 +2,43 @@ const AsciiHeader = () => {
   return (
     <div className="ascii-header">
       <pre>
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
       </pre>
       <pre>
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLLLLLLLL{'\n'}
-        LLLLLLLLLL{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLSKCLS{'\n'}
+        KCLSKCLS{'\n'}
       </pre>
       <pre>
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLL{'\n'}
-        LLLLLLLLLL{'\n'}
-        LLLLLLLLLL{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLS{'\n'}
+        KCLSKCLS{'\n'}
+        KCLSKCLS{'\n'}
       </pre>
     </div>
   );
