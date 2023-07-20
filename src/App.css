@@ -3,8 +3,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 400px;
+  max-width: 200px;
   margin: auto;
+  text-align: center;
 }
 
 .receipt-header {
@@ -15,11 +16,15 @@
 }
 
 .ascii-header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 0.5rem;
+  text-align: left;
 }
 
 .ascii-header pre {
-  margin: 1rem;
+  margin: 0 1rem;
+  font-size: 0.5rem;
 }
 
 footer > p {
@@ -43,6 +48,7 @@ footer > p {
 @media print {
   .receipt {
     background-color: white;
+    font-size: 0.5rem;
   }
   .barcode-input {
     display: none;

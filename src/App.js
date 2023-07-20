@@ -2,14 +2,16 @@ import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import { useBarcode } from 'next-barcode';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   const [barcode, setBarcode] = useState(null);
 
   const { inputRef } = useBarcode({
     value: barcode,
-    options: {}
+    options: {
+      width: 1
+    }
   });
 
   const handleBarcodeInput = (e) => {
@@ -22,6 +24,21 @@ function App() {
 
   const handleSubmit = (e) => {
     window.print();
+    // e.preventDefault();
+  };
+
+  const detectEnterPress = (e) => {
+    if (e.key === 'Enter') {
+      // e.preventDefault();
+      window.open('http://localhost:3000/' + barcode, '_blank');
+    }
+  };
+
+  const extractBarcodeFromURL = () => {
+    const url = window.location.href;
+    const urlParts = url.split('/');
+    const barcode = urlParts[urlParts.length - 1];
+    setBarcode(barcode);
   };
 
   return (
