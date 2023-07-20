@@ -9,6 +9,10 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />
+  },
+  {
+    path: '/:request',
+    element: <App />
   }
 ]);
 
