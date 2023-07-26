@@ -46,10 +46,28 @@ footer > p {
 }
 
 @media print {
+  @page {
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+  }
+
   .receipt {
     background-color: white;
     font-size: 0.5rem;
+    min-height: 1000px;
+    margin: 0 auto;
+    padding: 0;
+    border: initial;
+    width: initial;
+    min-height: initial;
+    box-shadow: initial;
+    background-color: initial;
+    font-size: initial;
   }
+
   .barcode-input {
     display: none;
   }
