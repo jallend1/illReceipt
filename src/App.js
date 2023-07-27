@@ -10,7 +10,7 @@ function App() {
 
   const { request } = useParams();
 
-  // Set the barcode to the value of the URL parameter
+  // Extracts the WorldShare request barcode from the URL parameter
   useEffect(() => {
     request && setBarcode(request);
   }, [request]);
@@ -22,7 +22,7 @@ function App() {
     }
   });
 
-  // On page load, loads print dialog
+  // On page load, loads print dialog box
   useEffect(() => {
     window.print();
   }, []);
