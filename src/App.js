@@ -22,10 +22,9 @@ function App() {
     }
   });
 
-  // On page load, print the receipt and close the window
+  // On page load, loads print dialog
   useEffect(() => {
     window.print();
-    window.close();
   }, []);
 
   return (
