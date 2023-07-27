@@ -31,10 +31,11 @@ function App() {
     }
   };
 
+  // Prints the receipt and closes the window
   const handleSubmit = (e) => {
     e.preventDefault();
     window.print();
-    setBarcode(' ');
+    window.close();
   };
 
   return (
@@ -47,8 +48,13 @@ function App() {
       <div className="barcode-input">
         <form onSubmit={handleSubmit}>
           <label htmlFor="barcode">Barcode: </label>
-          <input type="text" value={barcode} onChange={handleBarcodeInput} autoFocus />
-          <button type="submit">Submit</button>
+          <input
+            type="text"
+            value={barcode}
+            onChange={handleBarcodeInput}
+            autoFocus
+          />
+          <button type="submit">Print Receipt</button>
         </form>
       </div>
     </div>
