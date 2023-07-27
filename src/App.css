@@ -1,10 +1,14 @@
+h1 {
+  font-size: 1.5rem;
+}
+
 .receipt {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  max-width: 200px;
-  margin: auto;
+  justify-content: space-between;
+  max-width: 180px;
+  min-height: 500px;
   text-align: center;
 }
 
@@ -27,22 +31,21 @@
   font-size: 0.5rem;
 }
 
-footer > p {
+footer {
+  margin: 2rem;
   font-size: 0.6rem;
-  margin: 0;
-  padding: 0;
   text-align: center;
 }
 
-.barcode-input {
-  margin: 2rem;
+footer > p {
+  margin: 0;
+  text-align: center;
 }
 
-.barcode-input form button {
-  display: block;
-  margin: 1rem auto;
-  padding: 0.75rem;
-  border-radius: 0.25rem;
+@media screen {
+  .receipt {
+    margin: auto;
+  }
 }
 
 @media print {
@@ -50,25 +53,17 @@ footer > p {
     margin: 0;
   }
 
-  body {
-    margin: 0;
+  h1 {
+    display: none;
   }
 
   .receipt {
     background-color: white;
-    font-size: 0.5rem;
-    min-height: 1000px;
-    margin: 0 auto;
+    /* width: 100vw; */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    /* margin: 0 auto; */
     padding: 0;
-    border: initial;
-    width: initial;
-    min-height: initial;
-    box-shadow: initial;
-    background-color: initial;
-    font-size: initial;
-  }
-
-  .barcode-input {
-    display: none;
   }
 }

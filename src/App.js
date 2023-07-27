@@ -29,11 +29,12 @@ function App() {
 
   return (
     <div className="receipt">
+      <h1>ILL Chaos Averter 3000</h1>
       <Header />
+      <Footer />
       <main>
         <svg ref={inputRef} />
       </main>
-      <Footer />
     </div>
   );
 }
