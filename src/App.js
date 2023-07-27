@@ -10,7 +10,7 @@ function App() {
 
   const { request } = useParams();
 
-  // If the URL contains a request parameter, set the barcode to that value
+  // Set the barcode to the value of the URL parameter
   useEffect(() => {
     request && setBarcode(request);
   }, [request]);
@@ -22,21 +22,11 @@ function App() {
     }
   });
 
-  const handleBarcodeInput = (e) => {
-    // useBarcode does NOT like an empty string
-    if (e.target.value === '') {
-      setBarcode(' ');
-    } else {
-      setBarcode(e.target.value);
-    }
-  };
-
-  // Prints the receipt and closes the window
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // On page load, print the receipt and close the window
+  useEffect(() => {
     window.print();
     window.close();
-  };
+  }, []);
 
   return (
     <div className="receipt">
@@ -45,18 +35,6 @@ function App() {
         <svg ref={inputRef} />
       </main>
       <Footer />
-      <div className="barcode-input">
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="barcode">Barcode: </label>
-          <input
-            type="text"
-            value={barcode}
-            onChange={handleBarcodeInput}
-            autoFocus
-          />
-          <button type="submit">Print Receipt</button>
-        </form>
-      </div>
     </div>
   );
 }
