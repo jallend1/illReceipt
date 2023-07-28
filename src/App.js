@@ -10,9 +10,10 @@ function App() {
 
   const { request } = useParams();
 
-  // Extracts the WorldShare request barcode from the URL parameter
+  // Extracts the WorldShare request barcode from the URL parameter and loads print dialog box
   useEffect(() => {
     request && setBarcode(request);
+    window.print();
   }, [request]);
 
   const { inputRef } = useBarcode({
@@ -23,9 +24,8 @@ function App() {
   });
 
   // On page load, loads print dialog box
-  useEffect(() => {
-    window.print();
-  }, []);
+  // useEffect(() => {
+  // }, []);
 
   return (
     <div className="receipt">
