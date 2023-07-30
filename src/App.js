@@ -6,15 +6,8 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 function App() {
-  const [barcode, setBarcode] = useState(' ');
-
   const { request } = useParams();
-
-  // Extracts the WorldShare request barcode from the URL parameter and loads print dialog box
-  useEffect(() => {
-    request && setBarcode(request);
-    window.print();
-  }, [request]);
+  const [barcode, setBarcode] = useState(' ');
 
   const { inputRef } = useBarcode({
     value: barcode,
@@ -23,9 +16,14 @@ function App() {
     }
   });
 
-  // On page load, loads print dialog box
-  // useEffect(() => {
-  // }, []);
+  useEffect(() => {
+    request && setBarcode(request);
+  }, [request]);
+
+  // Printing directly based on request state led to an initial blank barcode
+  useEffect(() => {
+    barcode !== ' ' && window.print();
+  }, [barcode]);
 
   return (
     <div className="receipt">
