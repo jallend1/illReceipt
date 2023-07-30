@@ -24,9 +24,22 @@ function App() {
   useEffect(() => {
     if (barcode !== ' ') {
       window.print();
-      window.onafterprint = () => window.close();
+      // window.onafterprint = () => window.close();
     }
   }, [barcode]);
+
+  const loveAndAppreciate = `
+ ┏┓
+ ┃┃╱╲ In this
+ ┃╱╱╲╲ house
+ ╱╱╭╮╲╲ we love
+▔▏┗┛▕▔ & appreciate
+╱▔▔▔▔▔▔▔▔▔▔╲
+Console Readers
+╱╱┏┳┓╭╮┏┳┓ ╲╲
+▔▏┗┻┛┃┃┗┻┛▕▔`;
+
+  console.log(loveAndAppreciate);
 
   return (
     <div className="receipt">
