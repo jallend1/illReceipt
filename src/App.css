@@ -59,11 +59,6 @@ footer > p {
 
   .receipt {
     background-color: white;
-    /* width: 100vw; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
-    /* margin: 0 auto; */
     padding: 0;
   }
 }

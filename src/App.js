@@ -22,7 +22,10 @@ function App() {
 
   // Printing directly based on request state led to an initial blank barcode
   useEffect(() => {
-    barcode !== ' ' && window.print();
+    if (barcode !== ' ') {
+      window.print();
+      window.onafterprint = () => window.close();
+    }
   }, [barcode]);
 
   return (
