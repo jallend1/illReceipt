@@ -24,7 +24,7 @@ function App() {
   useEffect(() => {
     if (barcode !== ' ') {
       window.print();
-      // window.onafterprint = () => window.close();
+      window.onafterprint = () => window.close();
     }
   }, [barcode]);
 
