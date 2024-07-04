@@ -56,15 +56,18 @@ function App() {
           ))}
         </div>
       </main>
-      <div>
+      <div className="JSON-form">
         <form>
           <input
             type="text"
+            id="requestData"
             value={requestData}
-            onChange={(e) => setRequestData(e.target.value)}
+            onChange={(e) => {
+              setRequestData(e.target.value);
+            }}
           />
-          <button type="submit" onClick={handleRequestData}>
-            Enter Request Data
+          <button type="submit" id="submit" onClick={handleRequestData}>
+            Submit Request Data
           </button>
         </form>
       </div>
