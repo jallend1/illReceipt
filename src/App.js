@@ -3,22 +3,17 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import { useBarcode } from "next-barcode";
 import { useState, useEffect } from "react";
-// import { useParams } from "react-router-dom";
 
 function App() {
   const [barcode, setBarcode] = useState(" ");
-  // const [requestData, setRequestData] = useState(" ");
   const [lenderAddress, setLenderAddress] = useState(" ");
   const [title, setTitle] = useState(" ");
-
-  // const { request } = useParams();
 
   const handleRequestData = () => {
     const requestData = prompt("Enter the WorldShare request data:");
     if (requestData) {
       try {
         const dataArray = JSON.parse(requestData);
-        // setRequestData(dataArray);
         setBarcode(dataArray[1].requestNumber);
         setLenderAddress(dataArray[0].addressString);
         setTitle(dataArray[2].title);
