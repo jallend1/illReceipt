@@ -8,9 +8,10 @@ function App() {
   const [barcode, setBarcode] = useState(" ");
   const [lenderAddress, setLenderAddress] = useState(" ");
   const [title, setTitle] = useState(" ");
+  const [requestData, setRequestData] = useState(" ");
 
-  const handleRequestData = () => {
-    const requestData = prompt("Enter the WorldShare request data:");
+  const handleRequestData = (e) => {
+    e.preventDefault();
     if (requestData) {
       try {
         const dataArray = JSON.parse(requestData);
@@ -27,6 +28,7 @@ function App() {
     if (barcode && barcode !== " ") {
       const timer = setTimeout(() => {
         window.print();
+        setRequestData(" ");
       }, 500);
       return () => clearTimeout(timer);
     }
@@ -54,7 +56,18 @@ function App() {
           ))}
         </div>
       </main>
-      <button onClick={handleRequestData}>Enter Request Data</button>
+      <div>
+        <form>
+          <input
+            type="text"
+            value={requestData}
+            onChange={(e) => setRequestData(e.target.value)}
+          />
+          <button type="submit" onClick={handleRequestData}>
+            Enter Request Data
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
