@@ -32,7 +32,7 @@ h1 {
 }
 
 footer {
-  margin: 2rem;
+  /* margin: 2rem; */
   font-size: 0.6rem;
   text-align: center;
 }
@@ -53,7 +53,8 @@ footer > p {
     margin: 0;
   }
 
-  h1 {
+  h1,
+  button {
     display: none;
   }
 
@@ -66,4 +67,13 @@ footer > p {
     /* margin: 0 auto; */
     padding: 0;
   }
+}
+
+.lenderAddress {
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.lenderAddress > p {
+  margin: 0;
 }
